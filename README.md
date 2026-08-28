@@ -14,7 +14,7 @@ except the epsilon schedule:
 | **Adaptive schedule** | ~-6 | ~275k |
 | **Fixed decay schedule** | ~-15 | ~450k |
 
-![Training comparison](comparison.png)
+![Training comparison](assets/comparison.png)
 
 The adaptive schedule reaches a substantially higher score in fewer
 environment steps. It also terminates episodes faster once it starts
