@@ -191,7 +191,8 @@ class Agent():
             POOR_PERFORMANCE_THRESHOLD = -15
 
             if last_10_avg < POOR_PERFORMANCE_THRESHOLD:
-                epsilon = min(1.0, max(min_epsilon, epsilon * norm2(last_10_avg)))
+                boost = min(0.02, (norm2(last_10_avg) - 1) * epsilon)  # small nudge, capped
+                epsilon = min(1.0, epsilon + boost)
             else:
                 epsilon = max(min_epsilon, epsilon * norm1(last_10_avg))
 
