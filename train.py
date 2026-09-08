@@ -16,7 +16,6 @@ min_epsilon = 0.05
 env = gym.make("ALE/Pong-v5", render_mode="rgb_array")
 env = ResizeObservation(env, (64, 64))
 env = GrayscaleObservation(env, keep_dim=True)
-env = FrameStackObservation(env, stack_size=4)  # obs shape becomes (4, 64, 64, 1)
 
 agent = Agent(env, hidden_layer=hidden_layer, learning_rate=learning_rate,
               step_repeat=step_repeat, gamma=gamma)
